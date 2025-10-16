@@ -6,7 +6,7 @@ import com.dailycodework.dreamshop.model.Product;
 import com.dailycodework.dreamshop.repository.categoryRepository;
 import com.dailycodework.dreamshop.request.AddproducRequest;
 import com.dailycodework.dreamshop.request.ProductUpdateRequest;
-import com.dailycodework.dreamshop.service.category.ProductRepository;
+import com.dailycodework.dreamshop.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +46,7 @@ public class ProductService implements IProductService {
     }
     @Override
     public List<Product> getProducts() {
-        return List.of();
+        return  productRepository.findAll();
     }
 
     @Override
