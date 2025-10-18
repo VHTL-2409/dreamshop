@@ -86,8 +86,8 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> getProductsbyCategory(String category) {
-        return productRepository.findByCategory(category);
+    public List<Product> getProductsbyCategory(String categoryName) {
+        return productRepository.findByCategory_Name(categoryName);
     }
 
     @Override
@@ -96,8 +96,8 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> getProductsbyCategoryandbyBrand(String category, String brand) {
-        return productRepository.findByCategoryAndBrand(category, brand);
+    public List<Product> getProductsbyCategoryandbyBrand(String categoryName, String brandName) {
+        return productRepository.findByCategory_NameAndBrand(categoryName, brandName);
     }
 
     @Override
@@ -106,12 +106,12 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> getProductsbyBrandandbyName( String brand,String name) {
-        return productRepository.findByBrandAndName(brand, name);
+    public List<Product> getProductsbyBrandandbyName( String brandName,String categoryName) {
+        return productRepository.findByBrandAndName(brandName, categoryName);
     }
 
     @Override
-    public Long countProductByBrandAndName(String brand, String name) {
-        return productRepository.countByBranAndName(brand, name);
+    public Long countProductByBrandAndName(String brandName, String name) {
+        return productRepository.countByBrandAndName(brandName, name);
     }
 }
